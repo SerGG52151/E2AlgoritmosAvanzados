@@ -1,3 +1,5 @@
+from P1 import P1Graph
+
 
 def readFile(filePath):
     with open(filePath, 'r') as file:
@@ -23,12 +25,17 @@ def readFile(filePath):
     return n, distance_matrix, flow_matrix, coordinates
 
 def main():
-    n, dist_matrix, flow_matrix, coords = readFile('inputEx.txt')
+    n, dist_matrix, flow_matrix, coords = readFile('input.txt')
     print("N:", n)
-    print("Distance Matrix:", dist_matrix)
-    print("Flow Matrix:", flow_matrix)
-    print("Coordinates:", coords)
+    print("Matriz de Distancias:", dist_matrix)
+    print("Matriz de Flujo:", flow_matrix)
+    print("Coordenadas:", coords)
 
+    ''' P1 - MST para cableado minimo '''
+    P1 = P1Graph(n)
+    P1.graph = dist_matrix
+    mst = P1.primMST()
+    print("Arreglo de Conexiones MST:", mst)
 
 if __name__ == "__main__":
     main()
