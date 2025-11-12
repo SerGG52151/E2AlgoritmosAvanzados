@@ -1,8 +1,10 @@
 #include<bits/stdc++.h>
 #include <algorithm>
 #include <climits>
+
 #include "P1.h"
 #include "P2.h"
+#include "P3.h"
 
 
 using namespace std;
@@ -87,8 +89,15 @@ void test(){
 int main(){
     readFile("input.txt");
     test();
+    
+    // P1 - MST para cableado óptimo
     primMST(distanceMatrix);
+    
+    // P2 - TSP para ruta más corta
     solveTSP(distanceMatrix);
+    
+    // P3 - Flujo máximo    
+    edmondsKarp(flowMatrix);
     
     return 0;
 }
