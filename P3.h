@@ -47,6 +47,10 @@ bool bfs(const vector<vector<int>>& capacidad, vector<vector<int>>& flujo, vecto
 
 // Implementación de Edmonds-Karp
 int edmondsKarp(vector<vector<int>> capacidad) {
+    int n = capacidad.size();
+    int inicio;
+    int fin;
+    
     cout << "Ingrese el nodo fuente (0 a " << n - 1 << "): ";
     cin >> inicio;
     cout << "Ingrese el nodo destino (0 a " << n - 1 << "): ";
@@ -62,8 +66,6 @@ int edmondsKarp(vector<vector<int>> capacidad) {
         return 1;
     }
 
-
-    int n = capacidad.size();
     vector<vector<int>> flujo(n, vector<int>(n, 0));
     vector<int> padre(n);
     int flujo_maximo = 0;
@@ -87,9 +89,10 @@ int edmondsKarp(vector<vector<int>> capacidad) {
         flujo_maximo += incremento;
     }
 
-    cout << "\nFlujo máximo de información del nodo " << inicio
+    cout << "\nFlujo maximo de informacion del nodo " << inicio
          << " (Colonia " << char('A' + inicio) << ") al nodo " << fin
          << " (Colonia " << char('A' + fin) << "): " << flujo_maximo << endl;
-   
+    
+    return flujo_maximo;
 }
 

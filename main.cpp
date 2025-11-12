@@ -1,6 +1,10 @@
-#include<bits/stdc++.h>
 #include <algorithm>
 #include <climits>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <utility>
 
 #include "P1.h"
 #include "P2.h"
