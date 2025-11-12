@@ -1,5 +1,9 @@
 #include<bits/stdc++.h>
+#include <algorithm>
+#include <climits>
 #include "P1.h"
+#include "P2.h"
+
 
 using namespace std;
 
@@ -84,5 +88,7 @@ int main(){
     readFile("input.txt");
     test();
     primMST(distanceMatrix);
+    solveTSP(distanceMatrix);
+    
     return 0;
 }
