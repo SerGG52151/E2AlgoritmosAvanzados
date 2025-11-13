@@ -87,11 +87,11 @@ void test(){
 
 int main(){
     readFile("input.txt");
-    test();
+    //test();
     
     primMST(distanceMatrix);
     
-    solveTSP(distanceMatrix);                     
+    solveTSP_HeldKarp(distanceMatrix);                     
     
     edmondsKarp(flowMatrix);
 

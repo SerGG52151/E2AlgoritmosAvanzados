@@ -14,7 +14,7 @@ int minKey(vector<int> &key, vector<bool> &mstSet) {
 }
 
 void printMST(vector<int> &parent, vector<vector<int>> &graph) {
-    cout << "Edge \tWeight\n";
+    cout << "1.\nArista \tPeso\n";
     for (int i = 1; i < graph.size(); i++)
         cout << "(" << char(parent[i]+65) << ", " << char(i+65) << ")\t"
              << graph[parent[i]][i] << "\n";

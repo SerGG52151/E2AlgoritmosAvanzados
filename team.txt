@@ -1,0 +1,6 @@
+P1.h Cableado Óptimo Entre Colonias Usando Prim MST - Sergio Gómez Guerrero - A01571538
+P2.h Resolución del Agente Viajero (TSP) por Held-Karp - Angel Alexandro Angulo Prudencio - A00840313
+P3.h usando Edmund Karp - Hector Aranda Garcia - A01178284
+P4.h - Rutilo Alberto de la Peña Rodríguez - A01384647
+
+

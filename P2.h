@@ -93,5 +93,5 @@ void solveTSP_HeldKarp(vector<vector<int>> &distMatrix) {
         cout << " -> " << char(path[i] + 65);
     }
     cout << " -> A" << endl;
-    cout << "   Costo total: " << minCost << endl;
+    cout << "   Costo total: " << minCost << "\n\n";
 }
