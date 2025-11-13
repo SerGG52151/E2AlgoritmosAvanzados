@@ -9,7 +9,7 @@
 #include "P1.h"
 #include "P2.h"
 #include "P3.h"
-
+#include "P4.h"     
 
 using namespace std;
 
@@ -23,20 +23,17 @@ void readFile(const string& filePath){
     string line;
 
     if (!file.is_open()) {
-        cerr << "Error: No se encontro el archivo" << filePath << endl;
+        cerr << "Error: No se encontro el archivo " << filePath << endl;
         return;
     }
 
-    // numero de vertices
     while (getline(file, line) && line.empty());
     n = stoi(line);
 
-    // inicializar matrices
     distanceMatrix.assign(n, vector<int>(n));
     flowMatrix.assign(n, vector<int>(n));
     coords.resize(n);
 
-    // matriz de distanciass
     for (int i = 0; i < n; ++i) {
         while (getline(file, line) && line.empty());
         stringstream ss(line);
@@ -45,7 +42,6 @@ void readFile(const string& filePath){
         }
     }
 
-    // matriz de flujos
     for (int i = 0; i < n; ++i) {
         while (getline(file, line) && line.empty());
         stringstream ss(line);
@@ -53,8 +49,7 @@ void readFile(const string& filePath){
             ss >> flowMatrix[i][j];
         }
     }
-
-    // coords
+    
     for (int i = 0; i < n; ++i) {
         while (getline(file, line) && line.empty());
         line.erase(remove(line.begin(), line.end(), '('), line.end());
@@ -94,14 +89,13 @@ int main(){
     readFile("input.txt");
     test();
     
-    // P1 - MST para cableado óptimo
     primMST(distanceMatrix);
     
-    // P2 - TSP para ruta más corta
-    solveTSP_HeldKarp(distanceMatrix);
+    solveTSP(distanceMatrix);                     
     
-    // P3 - Flujo máximo    
     edmondsKarp(flowMatrix);
-    
+
+    nearestCentralInteractive(coords);            
+
     return 0;
 }
