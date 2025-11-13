@@ -98,7 +98,7 @@ int main(){
     primMST(distanceMatrix);
     
     // P2 - TSP para ruta más corta
-    solveTSP(distanceMatrix);
+    solveTSP_HeldKarp(distanceMatrix);
     
     // P3 - Flujo máximo    
     edmondsKarp(flowMatrix);
