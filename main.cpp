@@ -9,7 +9,8 @@
 #include "P1.h"
 #include "P2.h"
 #include "P3.h"
-#include "P4.h"     
+#include "P4.h"
+#include "P5.h"
 
 using namespace std;
 
@@ -89,13 +90,30 @@ int main(){
     readFile("input.txt");
     //test();
     
+    cout << "--- SINGLE-OBJECTIVE OPTIMIZATIONS ---\n";
     primMST(distanceMatrix);
     
     solveTSP_HeldKarp(distanceMatrix);                     
     
     edmondsKarp(flowMatrix);
 
-    nearestCentralInteractive(coords);            
+    nearestCentralInteractive(coords);
+
+    // --- PARETO-OPTIMAL FRONT GENERATION ---
+    cout << "\n--- GENERATING PARETO-OPTIMAL FRONT DATA ---\n";
+    ofstream plotFile("pareto_data.csv");
+    if (plotFile.is_open()) {
+        plotFile << "Alpha,Total_Distance,Total_Flow_Capacity\n";
+        // Iterate through different alpha values to find multiple Pareto-optimal points
+        for (int i = 0; i <= 100; ++i) {
+            double alpha = i / 100.0;
+            findParetoOptimalSolution(alpha, distanceMatrix, flowMatrix, n, plotFile);
+        }
+        plotFile.close();
+        cout << "Data for Pareto front saved to 'pareto_data.csv'\n";
+    } else {
+        cerr << "Unable to open file for writing Pareto data.\n";
+    }
 
     return 0;
 }
