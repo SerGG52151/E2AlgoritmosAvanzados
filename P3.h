@@ -4,6 +4,15 @@
 #include <climits>
 using namespace std;
 
+/*
+Edmonds-Karp
+Encontrar el flujo máximo entre fuente y sumidero
+
+Complejidad Temporal: O(V × E²)
+
+Complejidad Espacial: O(V²)
+*/
+
 // Función auxiliar para realizar BFS y encontrar un camino aumentante
 bool bfs(const vector<vector<int>>& capacidad, vector<vector<int>>& flujo, vector<int>& padre, int inicio, int fin) {
     int nodo_cantidad = capacidad.size();

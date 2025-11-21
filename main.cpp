@@ -90,14 +90,14 @@ int main(){
     readFile("input.txt");
     //test();
     
-    cout << "--- SINGLE-OBJECTIVE OPTIMIZATIONS ---\n";
-    primMST(distanceMatrix);
+    //cout << "--- SINGLE-OBJECTIVE OPTIMIZATIONS ---\n";
+    //primMST(distanceMatrix);
     
-    solveTSP_HeldKarp(distanceMatrix);                     
+    //solveTSP_HeldKarp(distanceMatrix);                     
     
-    edmondsKarp(flowMatrix);
+    //edmondsKarp(flowMatrix);
 
-    nearestCentralInteractive(coords);
+    //nearestCentralInteractive(coords);
 
     // --- PARETO-OPTIMAL FRONT GENERATION ---
     cout << "\n--- GENERATING PARETO-OPTIMAL FRONT DATA ---\n";

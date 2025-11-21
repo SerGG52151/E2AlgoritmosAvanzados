@@ -7,6 +7,17 @@
 #include <algorithm>
 #include <fstream>
 
+/*
+Algoritmo de Prim para Árbol de Expansión Mínima
+Encontrar el árbol que conecta todos los nodos con el costo combinado mínimo.
+
+Complejidad Temporal: O(n²)
+
+Matrices de distancia y flujo: O(n²)
+
+Matriz de costos combinados: O(n²)
+*/
+
 using namespace std;
 
 // This function finds a network that balances total distance cost and max flow potential.

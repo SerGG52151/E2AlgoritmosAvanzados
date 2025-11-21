@@ -5,6 +5,15 @@
 
 using namespace std;
 
+/*
+Held-Karp
+Propósito: Encontrar el camino hamiltoniano de costo mínimo
+
+Complejidad Temporal: O(n² × 2ⁿ)
+
+Complejidad Espacial: O(n × 2ⁿ)
+*/
+
 
 void solveTSP_HeldKarp(vector<vector<int>> &distMatrix) {
     int n = distMatrix.size();

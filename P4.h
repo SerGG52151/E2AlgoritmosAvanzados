@@ -5,6 +5,14 @@
 #include <utility>
 #include <iostream>
 #include <climits>
+/*
+Búsqueda Lineal
+Propósito: Encontrar el punto más cercano a una coordenada dada
+
+Complejidad Temporal: O(n) por consulta
+
+Complejidad Espacial: O(1) (excluyendo almacenamiento)
+*/
 
 using namespace std;
 
